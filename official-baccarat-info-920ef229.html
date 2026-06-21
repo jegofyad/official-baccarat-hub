@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于百家乐 · 资料索引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f2f2f0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #2a2a2a;
+            line-height: 1.6;
+            padding: 2.5rem 1.2rem;
+        }
+
+        .page {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* hero 区 */
+        .hero {
+            background: #fafafa;
+            border-radius: 24px;
+            padding: 3rem 2.5rem 2.8rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.03), 0 1px 3px rgba(0,0,0,0.02);
+            border: 1px solid #e8e6e4;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .hero .opening {
+            font-size: 1.1rem;
+            letter-spacing: 0.02em;
+            color: #6e6a66;
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #1f1d1b;
+            margin-bottom: 1rem;
+        }
+
+        .hero .tagline {
+            max-width: 640px;
+            margin: 0 auto;
+            color: #5d5955;
+            font-size: 1rem;
+            border-top: 1px solid #dddcd9;
+            padding-top: 1.2rem;
+            margin-top: 0.8rem;
+        }
+
+        /* 通用卡片 */
+        .card {
+            background: #fcfcfb;
+            border-radius: 20px;
+            padding: 2rem 2.2rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.01);
+            border: 1px solid #e7e5e2;
+            margin-bottom: 2rem;
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #2b2825;
+            border-left: 4px solid #b8b2ab;
+            padding-left: 1rem;
+            margin-bottom: 1.3rem;
+        }
+
+        .card p {
+            margin-bottom: 1rem;
+            color: #3f3c38;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 特点列表 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.4rem;
+            margin-top: 0.8rem;
+        }
+
+        .feature-item {
+            background: #f7f6f4;
+            border-radius: 16px;
+            padding: 1.2rem 1rem 1rem;
+            border: 1px solid #e3e1de;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .feature-item:hover {
+            box-shadow: 0 6px 12px rgba(0,0,0,0.03);
+        }
+
+        .feature-item .label {
+            font-weight: 500;
+            color: #2d2a27;
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+        }
+
+        .feature-item .desc {
+            font-size: 0.88rem;
+            color: #5f5b56;
+            line-height: 1.5;
+        }
+
+        /* 引用 / 提示块 */
+        .insight {
+            background: #f6f5f3;
+            border-radius: 16px;
+            padding: 1.6rem 2rem;
+            border-left: 6px solid #cbc6bf;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        .insight p {
+            margin-bottom: 0.3rem;
+        }
+
+        .insight .source {
+            font-size: 0.85rem;
+            color: #7d7872;
+            margin-top: 0.6rem;
+        }
+
+        /* FAQ 摘要 */
+        .faq-mini {
+            margin-top: 1.2rem;
+            border-top: 1px dashed #d5d2ce;
+            padding-top: 1.5rem;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.8rem;
+        }
+
+        .faq-mini summary {
+            font-weight: 450;
+            cursor: pointer;
+            color: #2f2c29;
+            padding: 0.3rem 0;
+        }
+
+        .faq-mini summary::-webkit-details-marker {
+            color: #a39e98;
+        }
+
+        .faq-mini .answer {
+            padding: 0.5rem 0 0.2rem 1.2rem;
+            color: #474440;
+            font-size: 0.93rem;
+        }
+
+        /* 温和结尾 */
+        .closing {
+            text-align: center;
+            border-top: 1px solid #e0ddd9;
+            padding-top: 2.2rem;
+            margin-top: 1rem;
+        }
+
+        .closing p {
+            color: #585450;
+            max-width: 600px;
+            margin: 0 auto 0.8rem;
+        }
+
+        .closing .meta {
+            font-size: 0.85rem;
+            color: #98928b;
+        }
+
+        a {
+            color: #2f5b7a;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: #2f5b7a;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+
+            .hero {
+                padding: 2rem 1.2rem 1.8rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .feature-item {
+                padding: 1rem 0.8rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- hero 开场短句 -->
+    <div class="hero">
+        <div class="opening">从资料整理的角度，慢慢展开</div>
+        <h1>百家乐 · 信息索引</h1>
+        <div class="tagline">
+            规则、演变、版本与参考——一份基于公开资料的摘要式记录，不追求面面俱到，只求清晰可循。
+        </div>
+    </div>
+
+    <!-- 承接段落：背景与资料线索 -->
+    <div class="card">
+        <h2>一份资料索引</h2>
+        <p>
+            关于<a href="https://official--baccarat.com">百家乐</a>的公开讨论常常分散在各种论坛、手册与历史文档中。本页尝试将这些碎片梳理为几个可索引的区块：基础规则、常见变体、术语简释以及部分参考来源。所有内容均来自可验证的公开资料，不包含主观推测。
+        </p>
+        <p>
+            之所以选择索引式整理，是因为对很多爱好者或研究者而言，快速定位到可靠的信息起点比直接阅读冗长叙述更有帮助。这里提供的每一条都可能成为进一步查阅的线索。
+        </p>
+    </div>
+
+    <!-- 特点列表 + 场景融合 -->
+    <div class="card">
+        <h2>整理框架 · 四个侧面</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <span class="label">规则基础</span>
+                <span class="desc">八副牌、庄闲和、补牌规则——这些是多数版本共享的底层逻辑。</span>
+            </div>
+            <div class="feature-item">
+                <span class="label">变体对照</span>
+                <span class="desc">北美“Punto Banco”、欧洲“Chemin de Fer”以及亚洲常见版本，记录其发牌与抉择差异。</span>
+            </div>
+            <div class="feature-item">
+                <span class="label">术语备忘录</span>
+                <span class="desc">Natural、Banco、Coup、Tie……简单的词汇表，方便在阅读旧文献或外文资料时对照。</span>
+            </div>
+            <div class="feature-item">
+                <span class="label">历史线索</span>
+                <span class="desc">从15世纪意大利的“baccara”到法国贵族纸牌游戏，再到现代赌场版本，仅列事实节点。</span>
+            </div>
+        </div>
+        <div class="insight">
+            <p><strong>一个观察：</strong>许多资料在描述规则时存在细微出入，尤其是补牌条件与抽水比例。建议至少交叉比对三个独立来源，再形成自己的理解。</p>
+            <p class="source">—— 摘自个人阅读笔记，2024</p>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 + 精细化提示 -->
+    <div class="card">
+        <h2>常见疑问摘要</h2>
+        <p style="margin-bottom: 0.6rem;">基于邮件与讨论区中反复出现的问题，这里整理了三个典型。</p>
+        <div class="faq-mini">
+            <details>
+                <summary>“百家乐”与“Baccarat”是同一个游戏吗？</summary>
+                <div class="answer">是的，中文“百家乐”直接对应英文“Baccarat”。部分地区也写作“Baccara”。不同语言版本在细节上略有差异，但共用同一核心规则框架。</div>
+            </details>
+            <details>
+                <summary>为什么我看到过不同的补牌规则？</summary>
+                <div class="answer">因为存在多个变体。例如“Punto Banco”中玩家不需做任何决策，而“Chemin de Fer”允许玩家选择是否补第三张。阅读时需先确认讨论的是哪个版本。</div>
+            </details>
+            <details>
+                <summary>有没有推荐的基础书单或文档？</summary>
+                <div class="answer">公开领域可以参考《The Casino Gambler's Guide》中有关Baccarat的章节，以及部分大学博弈论课程中收录的规则说明。在线资源方面，可查阅维基百科的“Baccarat”词条以及一些游戏历史档案网站。</div>
+            </details>
+        </div>
+        <p style="margin-top: 1.2rem; font-size: 0.9rem; color: #706b65;">
+            ※ 以上回答基于可公开获取的文献整理，不构成任何形式的建议。
+        </p>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="closing">
+        <p>这份索引只是起点。关于<a href="https://official--baccarat.com">百家乐</a>，更深入的理解往往来自跨文本比对与长期积累。</p>
+        <p class="meta">最后更新于2025年 · 以资料整理为方法</p>
+    </div>
+</div>
+</body>
+</html>
