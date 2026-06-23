@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐鱼 · 简明访问指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f0f2f6;
+            color: #2c3e4f;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        /* hero */
+        .hero {
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
+            padding: 3rem 2.5rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid #e9ecf0;
+        }
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #1a2634;
+            margin-bottom: 1.2rem;
+        }
+        .hero h1 span {
+            background: #eef2f7;
+            padding: 0.15rem 0.6rem;
+            border-radius: 40px;
+            font-weight: 450;
+            color: #1f2b3a;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 720px;
+            color: #3d4e5d;
+            margin-top: 0.6rem;
+        }
+        .hero .guide-tag {
+            display: inline-block;
+            background: #e4e9f0;
+            color: #1e2d3d;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 450;
+            margin-bottom: 1rem;
+            letter-spacing: 0.4px;
+        }
+
+        /* 卡片网格 */
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.6rem;
+            margin-bottom: 2.5rem;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 22px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.02);
+            border: 1px solid #e2e6eb;
+            padding: 1.8rem 1.8rem 2rem;
+            flex: 1 1 260px;
+            transition: box-shadow 0.15s ease;
+        }
+        .card:hover {
+            box-shadow: 0 8px 18px rgba(0,0,0,0.03), 0 2px 6px rgba(0,0,0,0.02);
+        }
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #1d293c;
+            margin-bottom: 0.8rem;
+            border-left: 3px solid #b8c6d6;
+            padding-left: 0.75rem;
+        }
+        .card p {
+            color: #405263;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+        .card .badge {
+            display: inline-block;
+            background: #eef2f8;
+            padding: 0.15rem 0.7rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 450;
+            color: #2b4054;
+            margin-top: 0.3rem;
+        }
+
+        /* 适合人群 + 链接句子 结合卡片 */
+        .audience-card {
+            background: #ffffff;
+            border-radius: 22px;
+            border: 1px solid #e2e6eb;
+            padding: 2rem 2rem 2.2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+        .audience-card h2 {
+            font-size: 1.5rem;
+            font-weight: 480;
+            color: #1f2e3f;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.01em;
+        }
+        .audience-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 2.5rem;
+            margin-bottom: 1.3rem;
+        }
+        .audience-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem 0.6rem;
+            background: #f3f6fa;
+            border-radius: 40px;
+            padding: 0.2rem 1rem 0.2rem 0.8rem;
+            font-size: 0.95rem;
+            color: #1e3142;
+            border: 1px solid #e0e4ea;
+        }
+        .audience-item .emoji-bg {
+            font-size: 1.2rem;
+        }
+        .audience-desc {
+            color: #3b4d5e;
+            font-size: 0.98rem;
+            margin-top: 0.3rem;
+        }
+
+        .link-sentence-box {
+            background: #f7f9fc;
+            border-radius: 18px;
+            padding: 1.6rem 2rem;
+            margin: 1.8rem 0 0.2rem;
+            border-left: 4px solid #c6d2e0;
+        }
+        .link-sentence-box p {
+            font-size: 1.04rem;
+            line-height: 1.7;
+            color: #1f3145;
+        }
+
+        /* 小贴士/提示 */
+        .tips-area {
+            background: #ffffff;
+            border-radius: 22px;
+            border: 1px solid #e2e6eb;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+        .tips-area h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #1c2b3d;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .tips-area ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .tips-area li {
+            padding: 0.35rem 0 0.35rem 1.2rem;
+            position: relative;
+            color: #314658;
+            font-size: 0.95rem;
+        }
+        .tips-area li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #889aad;
+            font-weight: 600;
+        }
+
+        /* FAQ 摘要 */
+        .faq-mini {
+            background: #ffffff;
+            border-radius: 22px;
+            border: 1px solid #e2e6eb;
+            padding: 1.8rem 2rem 2rem;
+            margin-bottom: 2rem;
+        }
+        .faq-mini h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #1f2e3f;
+            margin-bottom: 1.1rem;
+        }
+        .faq-item {
+            margin-bottom: 0.9rem;
+        }
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            color: #102231;
+            margin-bottom: 0.1rem;
+        }
+        .faq-item p {
+            color: #3b4f61;
+            font-size: 0.93rem;
+            margin-left: 0.2rem;
+        }
+
+        /* 页脚 */
+        .footer-note {
+            text-align: center;
+            margin-top: 3rem;
+            color: #6b7d8d;
+            font-size: 0.85rem;
+            border-top: 1px solid #dce1e8;
+            padding-top: 1.8rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            body { padding: 1.2rem 0.8rem; }
+            .hero { padding: 2rem 1.5rem; }
+            .hero h1 { font-size: 1.8rem; }
+            .card { flex: 1 1 100%; }
+            .audience-row { gap: 0.8rem; }
+            .link-sentence-box { padding: 1.2rem 1.2rem; }
+        }
+        a {
+            color: #1f4a7a;
+            text-decoration: none;
+            border-bottom: 1px dotted #c0cede;
+            transition: border-color 0.15s;
+        }
+        a:hover {
+            border-bottom: 1px solid #1f4a7a;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- hero -->
+    <div class="hero">
+        <div class="guide-tag">📋 简明访问指南</div>
+        <h1>关于 <span>乐鱼</span> · 实用信息卡片</h1>
+        <p>这里整理了一些基础用法、访问提醒以及常见疑问，帮助你快速了解平台特性。内容保持简洁，适合初次接触的朋友参考。</p>
+    </div>
+
+    <!-- 用途卡片 -->
+    <div class="card-grid">
+        <div class="card">
+            <h3>📌 常用功能</h3>
+            <p>提供内容浏览、信息检索与互动工具，界面侧重清晰分类。你可以根据导航模块快速定位感兴趣的板块。</p>
+            <span class="badge">分类检索</span>
+        </div>
+        <div class="card">
+            <h3>🔄 访问提醒</h3>
+            <p>建议使用主流浏览器（Chrome / Edge / Safari），并保持网络通畅。部分资源可能需要稳定的连接。</p>
+            <span class="badge">网络环境</span>
+        </div>
+        <div class="card">
+            <h3>⚙️ 平台特点</h3>
+            <p>资源更新节奏稳定，内容组织偏重实用性。站内搜索与推荐逻辑围绕用户兴趣展开，操作直观。</p>
+            <span class="badge">持续迭代</span>
+        </div>
+    </div>
+
+    <!-- 适合人群 + 自然链接句子 -->
+    <div class="audience-card">
+        <h2>👥 适合哪些朋友？</h2>
+        <div class="audience-row">
+            <span class="audience-item"><span class="emoji-bg">🌱</span> 初次体验者</span>
+            <span class="audience-item"><span class="emoji-bg">📘</span> 内容探索者</span>
+            <span class="audience-item"><span class="emoji-bg">🧭</span> 日常浏览用户</span>
+            <span class="audience-item"><span class="emoji-bg">🔍</span> 信息爱好者</span>
+        </div>
+        <div class="audience-desc">
+            无论你是想找寻实用资源，还是希望获得流畅的浏览体验，<a href="https://online-app-leyu.com">乐鱼</a> 都提供了一个相对轻量的平台。界面没有过多复杂层级，适合日常使用。
+        </div>
+
+        <!-- 自然链接段落 -->
+        <div class="link-sentence-box">
+            <p>如果你正准备查找一些内容，不妨试试从 <a href="https://online-app-leyu.com">乐鱼</a> 的首页开始。网站采用卡片式布局，主次分明，可以快速了解当前有哪些分类和推荐。建议在访问前确认网络稳定，以获得更好的加载速度。</p>
+        </div>
+    </div>
+
+    <!-- 提示区块 -->
+    <div class="tips-area">
+        <h3>🧩 访问小贴士</h3>
+        <ul>
+            <li>首次访问时，可以留意页面顶部的导航区域，大部分功能入口都集中在那里。</li>
+            <li>部分内容可能需要登录或注册后查看，具体以页面提示为准。</li>
+            <li>如果遇到加载缓慢，尝试刷新或更换网络环境（例如切换 Wi-Fi 与移动数据）。</li>
+            <li>平台偶尔会进行维护或更新，届时可能出现短暂不可用，稍后重试即可。</li>
+        </ul>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+        <h3>❓ 常见疑问摘要</h3>
+        <div class="faq-item">
+            <strong>是否需要付费？</strong>
+            <p>基础浏览和搜索功能免费开放。部分增值服务或特定内容可能有不同的规则，具体以站内说明为准。</p>
+        </div>
+        <div class="faq-item">
+            <strong>内容更新频率如何？</strong>
+            <p>资源与信息会保持日常更新，重要节点或活动期间可能会有更集中的内容补充。</p>
+        </div>
+        <div class="faq-item">
+            <strong>移动端体验如何？</strong>
+            <p>页面适配手机与平板，触摸操作友好，建议使用系统自带浏览器或主流第三方浏览器访问。</p>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        本页为信息介绍 · 实际内容以 <a href="https://online-app-leyu.com">乐鱼</a> 官网为准
+    </div>
+</div>
+</body>
+</html>
