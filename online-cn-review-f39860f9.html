@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+  <title>乐鱼 · 一些关于阅读与发现的笔记</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', sans-serif;
+      background-color: #faf8f5;
+      color: #2c2a28;
+      line-height: 1.7;
+      padding: 0 1.25rem;
+    }
+
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.5rem 0 4rem;
+    }
+
+    /* hero */
+    .hero {
+      margin-bottom: 3.5rem;
+      padding: 2.8rem 0 1.2rem;
+      border-bottom: 1px solid #e6e1da;
+    }
+
+    .hero-title {
+      font-size: 2.1rem;
+      font-weight: 480;
+      letter-spacing: -0.02em;
+      color: #1a1816;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: #5f5b56;
+      max-width: 34em;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-note {
+      background-color: #f0ebe4;
+      padding: 1rem 1.4rem;
+      border-radius: 2px;
+      border-left: 4px solid #b8a99a;
+      font-size: 0.95rem;
+      color: #3d3934;
+      margin-top: 1.6rem;
+      line-height: 1.6;
+    }
+
+    .hero-note a {
+      color: #2c2a28;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #b8a99a;
+    }
+
+    .hero-note a:hover {
+      color: #784f2e;
+    }
+
+    /* 卡片式区块 */
+    .section-card {
+      background: #fffffffb;
+      border: 1px solid #efeae3;
+      border-radius: 3px;
+      padding: 2rem 1.8rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .section-head {
+      font-size: 1.3rem;
+      font-weight: 450;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.25rem;
+      color: #1f1d1b;
+      border-bottom: 1px solid #e8e1d9;
+      padding-bottom: 0.6rem;
+    }
+
+    .section-card p {
+      margin-bottom: 1rem;
+    }
+
+    .section-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight-box {
+      background: #f3efe9;
+      padding: 1rem 1.4rem;
+      border-radius: 2px;
+      font-size: 0.95rem;
+      margin: 1.2rem 0;
+      border-left: 3px solid #c5b4a1;
+    }
+
+    .highlight-box strong {
+      font-weight: 500;
+      color: #2d2a25;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .grid-item {
+      background: #faf7f3;
+      padding: 1rem 1.2rem;
+      border-radius: 3px;
+    }
+
+    .grid-item h4 {
+      font-size: 1rem;
+      font-weight: 450;
+      margin-bottom: 0.35rem;
+      color: #35322e;
+    }
+
+    .grid-item p {
+      font-size: 0.92rem;
+      color: #4f4b46;
+      margin-bottom: 0;
+    }
+
+    /* faq 摘要区块 */
+    .faq-summary {
+      margin-top: 1.8rem;
+    }
+
+    .faq-item {
+      padding: 0.85rem 0;
+      border-bottom: 1px dashed #e2d9d0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 470;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+      color: #252220;
+    }
+
+    .faq-a {
+      font-size: 0.93rem;
+      color: #5a5550;
+      padding-left: 0.3rem;
+    }
+
+    .faq-a a {
+      color: #4f3d2e;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: #ccbfb1;
+    }
+
+    .faq-a a:hover {
+      color: #784f2e;
+    }
+
+    /* 底部链接区 */
+    .footer-links {
+      margin-top: 3.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2dbd2;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.9rem;
+      color: #6b655d;
+    }
+
+    .footer-links a {
+      color: #3b3732;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: #c5b4a1;
+      margin-right: 0.8rem;
+    }
+
+    .footer-links a:hover {
+      color: #784f2e;
+    }
+
+    .footer-copy {
+      color: #8e857c;
+      font-size: 0.85rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 640px) {
+      body {
+        padding: 0 0.9rem;
+      }
+      .page {
+        padding: 1.8rem 0 3rem;
+      }
+      .hero-title {
+        font-size: 1.7rem;
+      }
+      .section-card {
+        padding: 1.5rem 1.2rem;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+      .hero-note {
+        padding: 0.8rem 1rem;
+      }
+      .footer-links {
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .hero-title {
+        font-size: 1.4rem;
+      }
+      .section-head {
+        font-size: 1.15rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero 区 -->
+  <div class="hero">
+    <div class="hero-title">关于乐鱼的一点笔记</div>
+    <div class="hero-sub">一个有关内容、检索与安静阅读的角落</div>
+    <div class="hero-note">
+      <strong>「乐鱼」</strong> 这个词，听起来像是一种悠闲的游动，或者某段未被标记的航程。
+      它不一定要被定义。但如果你恰好也在寻找一个能慢慢看、慢慢想的地方，
+      可以顺着这个词，去看看它指向的岛屿 —— <a href="https://online-cn-leyu.com">乐鱼</a>。
+    </div>
+  </div>
+
+  <!-- 优势区 + 说明区 合并为卡片 -->
+  <div class="section-card">
+    <div class="section-head">简洁、干净、像纸张一样</div>
+    <p>网页设计常常太吵了。而这里，文字是主角，版面是安静的背景。
+    没有弹窗，没有自动播放，没有拥挤的广告栏 —— 只有排列整齐的段落、标题和偶尔出现的引用框。</p>
+
+    <div class="highlight-box">
+      <strong>一点提示：</strong> 当你打开 <a href="https://online-cn-leyu.com">乐鱼</a>，可能会发现它比一般网站更「轻」。
+      页面加载快，排版留白多，读起来不容易累。这不是粗糙，而是一种有意的克制。
+    </div>
+
+    <p>内容结构基本遵循文章的逻辑：开头、展开、收束。无论你从哪一段开始读，都能很快抓住上下文。
+    没有复杂的导航迷宫，也没有非得注册才能看的内容。阅读的权利被归还给了读者。</p>
+
+    <!-- 特点区域：融入卡片 -->
+    <div class="grid-2">
+      <div class="grid-item">
+        <h4>主题分类清晰</h4>
+        <p>按内容来源和话题分组，每一类都干净利落，不会混杂。</p>
+      </div>
+      <div class="grid-item">
+        <h4>引用与提示框</h4>
+        <p>偶尔会出现类似手写笔记的边栏引用，用于补充、说明或提醒。</p>
+      </div>
+      <div class="grid-item">
+        <h4>省略了多余装饰</h4>
+        <p>没有图标动效、没有渐变按钮、没有背景视频。文字本身就是界面。</p>
+      </div>
+      <div class="grid-item">
+        <h4>适合慢慢浏览</h4>
+        <p>节奏宽松，不赶时间，每一页都像一篇短文，可以随时停下。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 说明区 / 场景区（第二次卡片） -->
+  <div class="section-card">
+    <div class="section-head">在什么样的时刻会想起它？</div>
+    <p>也许是在一个不想被打扰的午后，或者深夜，想找一个不吵闹的地方读点什么。
+    手机里的各种推送刚刚按停，你打开 <a href="https://online-cn-leyu.com">乐鱼</a>，页面很白，字很稳，像翻开一本旧笔记本。</p>
+
+    <p>有时是为了查一个模糊的概念，有时只是想随便看看别人的记录。
+    这里不需要你贡献数据，不需要你点赞收藏。你可以安静地来，安静地走。
+    内容就放在那里，不会因为点击次数而变化。</p>
+
+    <div class="highlight-box">
+      <strong>另外：</strong> 所有的<a href="https://online-cn-leyu.com">乐鱼</a>页面都经过了基础的移动端适配，
+      在手机或平板上的阅读体验并不输给电脑。用浏览器打开，就是全部。
+    </div>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="section-card faq-summary">
+    <div class="section-head">一些可能想问的</div>
+
+    <div class="faq-item">
+      <div class="faq-q">「乐鱼」需要注册或登录吗？</div>
+      <div class="faq-a">不需要。网站本身没有会员系统，打开即可浏览。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">内容会频繁更新吗？</div>
+      <div class="faq-a">更新节奏不算快，每次更新都会补充一些新的笔记或整理。没有固定排期。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">我能分享或引用里面的内容吗？</div>
+      <div class="faq-a">当然。和对待任何普通文章一样，标注来源即可。如果想了解更多，可以查看页面底部的链接。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">为什么叫「乐鱼」？</div>
+      <div class="faq-a">一个偶然的组合，没有特别的故事。你可以理解为：在信息的河流里，游得自在一点。
+      就像 <a href="https://online-cn-leyu.com">乐鱼</a> 这个域名一样，它不解释自己，它只是存在。</div>
+    </div>
+  </div>
+
+  <!-- 底部链接区域 -->
+  <div class="footer-links">
+    <div>
+      <a href="https://online-cn-leyu.com">乐鱼</a>
+      <span style="color: #b0a79d;">·</span>
+      <a href="#">阅读随记</a>
+      <span style="color: #b0a79d;">·</span>
+      <a href="#">关于</a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2025 &middot; 静默页面
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
